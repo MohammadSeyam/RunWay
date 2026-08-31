@@ -4,6 +4,7 @@ import cors from "cors"
 import dotenv from 'dotenv'
 import connectDB from "./utils/db.js"
 import jobRouter from "./routes/job.route.js"
+import companyRouter from "./routes/company.route.js"
 
 
 dotenv.config()
@@ -24,6 +25,9 @@ app.use(cors(corsOptions))
 
 app.use('/api/v1/job',jobRouter)
 //http://localhost:8000/api/v1/job
+
+app.use('/api/v1/company',companyRouter)
+//http://localhost:8000/api/v1/company
 
 
 const PORT=process.env.PORT || 3000
