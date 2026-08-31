@@ -4,12 +4,9 @@ import cors from "cors"
 import dotenv from 'dotenv'
 import connectDB from "./utils/db.js"
 import jobRouter from "./routes/job.route.js"
-<<<<<<< HEAD
 import companyRouter from "./routes/company.route.js"
-=======
 import userRouter from "./routes/user.route.js"
 import applicationRouter from "./routes/application.route.js"
->>>>>>> c84922e4266941a607b459865752f3c0219d4c74
 
 
 dotenv.config()
