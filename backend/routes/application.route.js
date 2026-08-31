@@ -1,6 +1,6 @@
 import express from 'express'
 import isAuthenticated from '../middlewares/isAuthenticated.js'
-import { applyJob, getApplicants, getAppliedJobs, updaateStatus } from '../controllers/aplication.controller.js'
+import { applyJob, getApplicants, getAppliedJobs, updaateStatus } from '../controllers/application.controller.js'
 
 const applicationRouter = express.Router()
 

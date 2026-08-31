@@ -1,29 +1,21 @@
-import mongoose, { mongo } from "mongoose"
+import mongoose from "mongoose"
 
-const compnaySchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:true,
-        unique:true
-    },
-    description:{
-        type:String
-    },
-    website:{
-        type:String
-    },
-    location:{
-        type:String
-    },
-    logo:{
-        type:String //URL to company logo
-    },
-    userId:{
+const applicationSchema = new mongoose.Schema({
+    job:{
         type:mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'Job',
         required:true
+    },
+    applicant:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        required:true
+    },
+    status:{
+        type:String,
+        enum:['pending','accepted','rejected'],
+        default:'pending'
     }
-},
-{timestamps:true})
+},{timestamps:true})
 
-export const Company = mongoose.model('Company',compnaySchema)
+export const Application = mongoose.model('Application',applicationSchema)
