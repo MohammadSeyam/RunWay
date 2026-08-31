@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser"
 import cors from "cors"
 import dotenv from 'dotenv'
 import connectDB from "./utils/db.js"
+import jobRouter from "./routes/job.route.js"
 
 
 dotenv.config()
@@ -19,6 +20,11 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
 app.use(cors(corsOptions))
+
+
+app.use('/api/v1/job',jobRouter)
+//http://localhost:8000/api/v1/job
+
 
 const PORT=process.env.PORT || 3000
 app.listen(PORT,()=>{
