@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser"
 import cors from "cors"
 import dotenv from 'dotenv'
 import connectDB from "./utils/db.js"
+import jobRouter from "./routes/job.route.js"
 import userRouter from "./routes/user.route.js"
 import applicationRouter from "./routes/application.route.js"
 
@@ -23,6 +24,8 @@ app.use(cookieParser())
 app.use(cors(corsOptions))
 
 
+app.use('/api/v1/job',jobRouter)
+//http://localhost:8000/api/v1/job
 //api's
 app.use('/api/v1/user',userRouter)
 //http://localhost:8000/api/v1/user/
