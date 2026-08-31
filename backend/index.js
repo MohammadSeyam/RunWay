@@ -4,7 +4,12 @@ import cors from "cors"
 import dotenv from 'dotenv'
 import connectDB from "./utils/db.js"
 import jobRouter from "./routes/job.route.js"
+<<<<<<< HEAD
 import companyRouter from "./routes/company.route.js"
+=======
+import userRouter from "./routes/user.route.js"
+import applicationRouter from "./routes/application.route.js"
+>>>>>>> c84922e4266941a607b459865752f3c0219d4c74
 
 
 dotenv.config()
@@ -25,6 +30,14 @@ app.use(cors(corsOptions))
 
 app.use('/api/v1/job',jobRouter)
 //http://localhost:8000/api/v1/job
+//api's
+app.use('/api/v1/user',userRouter)
+//http://localhost:8000/api/v1/user/
+
+
+
+app.use('/api/v1/application',applicationRouter)
+//http://localhost:8000/api/v1/application
 
 app.use('/api/v1/company',companyRouter)
 //http://localhost:8000/api/v1/company
